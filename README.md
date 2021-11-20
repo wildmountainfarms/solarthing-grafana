@@ -1,6 +1,30 @@
+# SolarThing Grafana
+A Grafana Panel that can communicate with SolarThing REST
+
+### Goals
+* Communicate with SolarThing REST
+* 
+
+### Development Setup
+* See below
+* Install `nvm` on your machine
+  * If you're having trouble installing or using, make sure to use `bash` or a common shell
+  * Run `nvm install 14.0 && nvm use 14.0 && nvm alias default 14.0`
+    * I don't recommend versions other than 14. I tested 16, and couldn't get it to work
+  * WebStorm or your IDE may default to using `/usr/bin/node`, so make sure to change it if you need to
+    * "Language & Frameworks" -> "Node.js and NPM"
+* Running Grafana in docker: With your current working directory as this folder,
+  * `docker run -d -p 3000:3000 -v "$(pwd)":/var/lib/grafana/plugins/solarthing-grafana --name=grafana-solarthing-grafana grafana/grafana:7.0.0`
+  * `yarn dev`
+  * `docker restart grafana-solarthing-grafana`
+  * Password admin/admin
+  * Note that data is completely purged if you recreate the container
+
+---
+
 # Grafana Panel Plugin Template
 
-[![Build](https://github.com/grafana/grafana-starter-panel/workflows/CI/badge.svg)](https://github.com/grafana/grafana-starter-panel/actions?query=workflow%3A%22CI%22)
+[![Build](https://github.com/wildmountainfarms/solarthing-grafana/workflows/CI/badge.svg)](https://github.com/wildmountainfarms/solarthing-grafana/actions?query=workflow%3A%22CI%22)
 
 This template is a starting point for building Grafana Panel Plugins in Grafana 7.0+
 
